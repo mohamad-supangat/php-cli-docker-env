@@ -15,3 +15,5 @@ sampel using php8 to run php artisan command
 ```bash
 docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -p 8000:8000 phpdockerio/php80-cli php artisan serve --host 0.0.0.0
 ```
+
+or using `cli.sh` script
