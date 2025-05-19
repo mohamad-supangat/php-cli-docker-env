@@ -5,4 +5,4 @@ RUN apt-get update && apt-get install -y \
 		php7.4-gmp \
 		php7.4-gd
 
-# COPY /usr/bin/composer /usr/local/bin/
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
