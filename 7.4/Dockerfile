@@ -13,3 +13,17 @@ RUN apt-get update && apt-get install -y \
 
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN apt-get update && apt-get install -y wget libxrender1 libfontconfig1 && \
+    wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz && \
+    tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz && \
+    mv wkhtmltox/bin/wkhtmltopdf /usr/bin/wkhtmltopdf && \
+    mv wkhtmltox/bin/wkhtmltoimage /usr/bin/wkhtmltoimage && \
+    chmod a+x /usr/bin/wkhtmltopdf && \
+    chmod a+x /usr/bin/wkhtmltoimage && \
+    rm wkhtmltox-0.12.4_linux-generic-amd64.tar.xz && \
+    rm -rf wkhtmltox && \
+    apt-get autoremove -y wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN 
