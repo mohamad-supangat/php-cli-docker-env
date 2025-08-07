@@ -1,1 +1,1 @@
-docker build -t phpdockerio/php74-cli .
+docker build -t php74-cli .
