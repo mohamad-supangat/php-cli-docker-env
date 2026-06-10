@@ -1,1 +1,1 @@
-docker build -t phpdockerio/php:8.4-cli .
+docker build -t php:8.4-cli .
